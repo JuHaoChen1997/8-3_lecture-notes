@@ -54,13 +54,21 @@
     //>   },
     //> ];
  */
+
+    const assignments = [
+      { kind: "PASS-FAIL", score: { received: 4, max: 4 } },
+      { kind: "PERCENTAGE", score: { received: 8, max: 10 } },
+      { kind: "ESSAY", score: { received: 4, max: 5 } },
+    ];
+
 function gradeAssignments(assignments) {
   for (const assignment of assignments) {
     if (assignment.kind === "PASS-FAIL") {
       assignment.status = getPassFailGrade(assignment);
     } else if (assignment.kind === "PERCENTAGE") {
-      getPercentageGrade();
+      assignment.status = getPercentageGrade(assignment);
     } else {
+      assignment.staus = getOtherGrade(assignment);
     }
   }
 
@@ -79,11 +87,16 @@ function getPercentageGrade(assignment) {
   let percent = assignment.score.received / assignment.score.max;
   percent = (percent * 100).toFixed(1);
 
-  if (percent < 80) {
+  if (percent >= 80) {
     return `PASSED: ${percent}%`;
   } else {
     return `FAILED: ${percent}%`;
   }
 }
 
-function getOtherGrade(assignment) {}
+function getOtherGrade(assignment) {
+  return `"SCORE: ${assignment.score.received}/${assignment.score.max}`;
+}
+
+gradeAssignments(assignments);
+console.log(assignments);
