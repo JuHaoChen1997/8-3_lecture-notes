@@ -79,3 +79,18 @@ let googleSheetsData = [
   "deREk pETeRSOn",
   "ANToNIO shIVeRs",
 ];
+
+function missingName(salesforceData, googleSheetsData) {
+  let arr = [];
+  for (let element of googleSheetsData) {
+    arr.push(element.toLowerCase());
+  }
+
+  for (let i = 0; i < salesforceData.length; i++) {
+    if (!arr.includes(salesforceData[i].toLowerCase())) {
+      console.log(salesforceData[i]);
+    }
+  }
+}
+
+missingName(salesforceData, googleSheetsData);

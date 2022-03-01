@@ -11,6 +11,19 @@
 let arr_1 = [3, 5, 22, 5, 7, 2, 45, 75, 89, 21, 2]; // --> 276
 let arr_2 = [9, 2, 42, 55, 71, 22, 4, 5, 90, 25, 26]; // --> 351
 
+let sum1 = 0;
+let sum2 = 0;
+
+for (let element of arr_1) {
+  sum1 += element;
+}
+
+for (let element of arr_2) {
+  sum2 += element;
+}
+
+console.log(sum1 + sum2);
+
 /**
  * EXERCISE 2
  *
@@ -33,7 +46,11 @@ let arr_2 = [9, 2, 42, 55, 71, 22, 4, 5, 90, 25, 26]; // --> 351
  * 22
  */
 let n1 = 22;
-
+for (let i = 1; i <= n1; i++) {
+  if (i % 2 === 0) {
+    console.log(i);
+  }
+}
 /**
  * EXERCISE 3
  *
@@ -52,7 +69,10 @@ let n1 = 22;
  * 43
  *
  */
-let arr = [43, 'what', 9, true, 'cannot', false, 'be', 3, true];
+let arr = [43, "what", 9, true, "cannot", false, "be", 3, true];
+for (let i = arr.length - 1; i >= 0; i--) {
+  console.log(arr[i]);
+}
 
 /**
  * EXERCISE 4
@@ -67,6 +87,13 @@ let arr = [43, 'what', 9, true, 'cannot', false, 'be', 3, true];
  */
 let arr_3 = [4, 6, 7];
 let arr_4 = [8, 1, 9];
+let newArr1 = [];
+
+for (let i = 0; i < arr_3.length; i++) {
+  newArr1.push(arr_3[i] + arr_4[i]);
+}
+
+console.log(newArr1);
 
 /**
  * EXERCISE 5
@@ -78,7 +105,14 @@ let arr_4 = [8, 1, 9];
  *
  * HINT: You can use  if((i+1) % 2 == 0) to check for even indexes
  */
-let str1 = 'javascript';
+let str1 = "javascript";
+for (let i = 0; i < str1.length; i++) {
+  if ((i + 1) % 2 === 0) {
+    str1 = str1.replace(str1.charAt(i), "Z");
+  }
+}
+
+console.log(str1);
 
 /**
  * EXERCISE 6
@@ -90,6 +124,11 @@ let str1 = 'javascript';
  */
 
 let str2 = `don't know why`;
+if (str2.includes("y")) {
+  console.log("yes");
+} else {
+  console.log("no");
+}
 
 /**
  * EXERCISE 7
@@ -100,6 +139,12 @@ let str2 = `don't know why`;
  */
 
 let n2 = 4; //  4 * 3 * 2 * 1 = 24
+let factorial = 1;
+for (let i = n2; i >= 1; i--) {
+  factorial *= i;
+}
+
+console.log(factorial);
 
 /**
  * EXERCISE 8
@@ -123,7 +168,15 @@ let n2 = 4; //  4 * 3 * 2 * 1 = 24
  * 0704
  * That was correct!
  */
-let pin = 0704;
+// let pin = 0704;
+// for (let i = 0; i < 4; i++) {
+//   let input = prompt("Please make your guess:");
+//   if (pin === Number(input)) {
+//     console.log("That was correct!");
+//   } else {
+//     console.log("Please make your guess:");
+//   }
+// }
 
 /** EXERCISE 9
  *
@@ -137,8 +190,26 @@ let pin = 0704;
  * string2 palindrome?: No
  */
 
-let str3 = 'racecar';
-let str4 = 'Java';
+let str3 = "racecar";
+let str4 = "Java";
+
+console.log(palindromeTest(str3));
+console.log(palindromeTest(str4));
+
+function palindromeTest(str) {
+  let arr1 = str.split("");
+  let arr2 = str.split("").reverse();
+
+  console.log(arr1, arr2);
+
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
+      return false;
+    }
+  }
+
+  return true;
+}
 
 /**
  * EXERCISE 10
@@ -156,3 +227,9 @@ let str4 = 'Java';
 
 let num1 = 2;
 let num2 = 8;
+
+let sum = 0;
+for (let i = 1; i <= num2; i++) {
+  sum += i;
+}
+console.log(sum);

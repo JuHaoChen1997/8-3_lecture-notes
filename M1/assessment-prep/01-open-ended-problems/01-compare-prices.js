@@ -10,8 +10,21 @@
 let priceOfHouse = "€1.500.000";
 let priceOfCar = "€20.000";
 
+priceOfHouse = strToNum(priceOfHouse);
+priceOfCar = strToNum(priceOfCar);
+
 if (priceOfHouse > priceOfCar) {
   console.log("The house is more expensive");
 } else {
   console.log("The car is more expensive");
+}
+
+function strToNum(str) {
+  str = str.replace("€", "");
+
+  while (str.indexOf(".") !== -1) {
+    str = str.replace(".", "");
+  }
+
+  return parseFloat(str);
 }
