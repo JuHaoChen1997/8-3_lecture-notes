@@ -19,7 +19,7 @@ console.log(randomDecimal30To70());
  * This time, generate a random INTEGER.
  * This task is important for selecting random elements of an array.
  *
- * Ask yourself: can your algorithm every return the number 30? How about the number 70? How do you know?
+ * Ask yourself: can your algorithm ever return the number 30? How about the number 70? How do you know?
  *
  * @returns {Integer} - a random integer between 30 and 70
  */
@@ -98,13 +98,33 @@ let exampleObject = {
  * @returns {String} - name of the highest paid role
  *
  */
-function highestSalary(roles) {}
+function highestSalary(roles) {
+  let roleName = "";
+  let roleSalary = 0;
+
+  console.log("keys:", Object.keys(roles));
+  console.log("values:", Object.values(roles));
+  console.log("entries:", Object.entries(roles));
+
+  let entries = Object.entries(roles);
+  for (let entry of entries) {
+    console.log(entry[0]);
+  }
+
+  // for (let value of roles) {
+  //   console.log(value);
+  // }
+
+  return roleName;
+}
 
 let exampleRoles = {
   juniorDev: 90000,
   seniorDev: 160000,
   engineeringManager: 200000,
 };
+
+highestSalary(exampleRoles);
 
 /**
  * RESEARCH ACTIVITY
