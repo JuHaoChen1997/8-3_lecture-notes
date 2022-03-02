@@ -7,7 +7,11 @@
  *
  * @returns {Number} - a random decimal number between 30 and 70
  */
-function randomDecimal30To70() {}
+function randomDecimal30To70() {
+  return Math.random() * 40 + 30;
+}
+
+console.log(randomDecimal30To70());
 
 /**
  * REVIEW ACTIVITY - Part 2
@@ -19,7 +23,11 @@ function randomDecimal30To70() {}
  *
  * @returns {Integer} - a random integer between 30 and 70
  */
-function randomInteger30To70() {}
+function randomInteger30To70() {
+  return Math.floor(Math.random() * 41 + 30);
+}
+
+console.log(randomInteger30To70());
 
 /**
  * ACTIVITY 1
@@ -38,11 +46,36 @@ function randomInteger30To70() {}
  * @param {String} key
  * @returns {Boolean}
  **/
-function isKeyInObject1(obj, key) {}
+function isKeyInObject1(obj, key) {
+  let keyInObject = false;
 
-function isKeyInObject2(obj, key) {}
+  for (let k in obj) {
+    if (key === k) {
+      keyInObject = true;
+    }
+  }
 
-function isKeyInObject3(obj, key) {}
+  return keyInObject;
+}
+
+function isKeyInObject2(obj, key) {
+  if (Object.keys(obj).includes(key)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function isKeyInObject3(obj, key) {
+  let entries = Object.entries(obj);
+  for (let entry of entries) {
+    if (entry[0] === key) {
+      return true;
+    }
+  }
+
+  return false;
+}
 
 let exampleObject = {
   timesIveBeenToBrazil: 0,
