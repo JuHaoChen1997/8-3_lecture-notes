@@ -43,3 +43,11 @@ console.log(greet()); //> "Welcome to NASA, space cadet!"
 /**
  * 3. Are there any benefits to using the arrow function syntax? Are there any limitations? Write a brief response below.
  */
+
+// concise
+// potentially more readable
+// easier to create 'anonymous functions' (a function without a name)
+
+// BUT
+
+// arrow functions aren't hoisted
