@@ -11,6 +11,7 @@ function falsy() {
   return !truthy();
 }
 
+//both are not higher order functions
 falsy(); //> false
 
 /**
