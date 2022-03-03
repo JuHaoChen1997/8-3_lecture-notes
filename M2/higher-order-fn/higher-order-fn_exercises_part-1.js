@@ -19,17 +19,18 @@ falsy(); //> false
  */
 
 function left() {
-  return 'Left';
+  return "Left";
 }
 
 function right() {
-  return 'Right';
+  return "Right";
 }
 
 function go(goLeft = true) {
   return goLeft ? left : right;
 }
 
+console.log(go());
 /**
  * Take a look at the functions below. Are any of the functions a higher order function?
  * If so, which ones and why so? If not, why not?
@@ -40,36 +41,35 @@ const directions = [];
 function storeDirections(direction) {
   directions.push(direction);
 }
-
 function go(direction, operation) {
   operation(direction);
   return direction;
 }
 
-go('Left', storeDirections);
-go('Right', storeDirections);
-go('Up', storeDirections);
+go("Left", storeDirections);
+go("Right", storeDirections);
+go("Up", storeDirections);
 console.log(directions); //> ["Left", "Right", "Up"]
 
-/**
- * Take a look at the higher order function below.
- * The transform() function expects, as its second argument, a function that accepts at least one argument.
- */
+// /**
+//  * Take a look at the higher order function below.
+//  * The transform() function expects, as its second argument, a function that accepts at least one argument.
+//  */
 
 function transform(text, fn) {
-  if (typeof fn !== 'function') {
+  if (typeof fn !== "function") {
     return text;
   }
 
   return fn(text);
 }
 
-/**
- * Use the function above to transform the text in the following ways. For each line below, you will need to write an anonymous function.
- *
- *
- * "left" -> "LEFT"
- * "RiGhT" -> "right"
- * "left right left" -> "left-right-left"
- * "up Down left" -> "UDL"
- */
+// /**
+//  * Use the function above to transform the text in the following ways. For each line below, you will need to write an anonymous function.
+//  *
+//  *
+//  * "left" -> "LEFT"
+//  * "RiGhT" -> "right"
+//  * "left right left" -> "left-right-left"
+//  * "up Down left" -> "UDL"
+//  */
