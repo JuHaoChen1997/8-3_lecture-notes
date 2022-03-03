@@ -2,12 +2,15 @@
  * 1. "Rest" and "spread" share the same syntax. What is that syntax? Write a brief resposne below.
  */
 
+//They use ...
+
 /**
  * 2. Is the code below an example of the "rest" or "spread" syntax? How do you know? Write a brief response.
  */
 const astronauts = ["Jessica Watkins", "Robert Shane", "Nicole Mann"];
 const [first, ...others] = astronauts;
-
+console.log(first); //Jessica Watkins
+console.log(others); //['Robert Shane','Nicole Mann'];
 /**
  * 3. Is the code below an example of the "rest" or "spread" syntax? How do you know? Write a brief response.
  */

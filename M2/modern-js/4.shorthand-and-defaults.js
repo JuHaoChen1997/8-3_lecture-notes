@@ -8,6 +8,13 @@ const last = "Mann";
 /**
  * 2. What are some of the benefits of using object shorthand? Are there any limitations? Write a brief response below.
  */
+const fullName = {
+  first,
+  middle,
+  last,
+};
+
+console.log(fullName);
 
 /**
  * 3. The function below expects that sometimes name will not be provided. Update the greet() function so that it uses default parameters.
